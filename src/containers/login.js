@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import styled from 'styled-components'
 
-import allTheActions from './actions'
+import allTheActions from '../actions'
 
 const Header = styled.div`
   background-color: ${props => props.theme.color.black};
@@ -21,6 +21,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header />
+        <p>Ceci est la page de login</p>
       </React.Fragment>
     )
   }
