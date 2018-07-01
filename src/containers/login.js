@@ -3,8 +3,11 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import styled from 'styled-components'
 
-import { CommonText, Title, SubTitle } from '../components/texts'
+import LoginForm from '../components/loginForm'
+
 import allTheActions from '../actions'
+
+import '../../node_modules/react-vis/dist/style.css'
 
 const MainContainer = styled.div`
   display: flex;
@@ -48,11 +51,8 @@ class App extends Component {
           </LeftDiv>
           <BookSeparator />
           <RightDiv>
+            <LoginForm />
             {/* creer un component input pour contenir tout sa*/}
-            <Title>CONNEXION</Title>
-            <SubTitle>SE CONNECTER</SubTitle>
-            <CommonText>Vous êtes nouveau ?</CommonText>
-            <CommonText>Vous avez oublier votre mot de passe ?</CommonText>
           </RightDiv>
         </MainContainer>
       </React.Fragment>
