@@ -7,8 +7,8 @@ import { ThemeProvider } from 'styled-components'
 import { Route, Switch } from 'react-router'
 import { ConnectedRouter } from 'connected-react-router'
 
-import Home from './containers/home'
 import Login from './containers/login'
+import HomePage from './containers/homePage'
 
 import { history, store } from './config/store'
 import theme from './config/theme'
@@ -18,8 +18,8 @@ ReactDOM.render(
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <Switch>
-          <Route exact path="/" render={() => <Home />} />
-          <Route path="/login" render={() => <Login />} />
+          <Route exact path="/" render={() => <Login />} />
+          <Route exact path="/home" render={() => <HomePage />} />
         </Switch>
       </ConnectedRouter>
     </Provider>
