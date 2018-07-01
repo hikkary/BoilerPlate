@@ -1,14 +1,22 @@
 import React from 'react'
 import { addDecorator, configure } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
+import { MemoryRouter } from 'react-router'
 import centered from '@storybook/addon-centered'
+
 import '../../node_modules/react-vis/dist/style.css'
 
 import theme from '../config/theme'
 
-const ThemeDecorator = storyFn => (
-  <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
+const ThemeDecorator = story => (
+  <ThemeProvider theme={theme}>{story()}</ThemeProvider>
 )
+
+const MemoryDecorator = story => (
+  <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
+)
+
+addDecorator(MemoryDecorator)
 addDecorator(ThemeDecorator)
 addDecorator(centered)
 
