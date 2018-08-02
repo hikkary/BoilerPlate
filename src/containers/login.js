@@ -7,7 +7,7 @@ import LoginForm from '../components/loginForm'
 
 import allTheActions from '../actions'
 
-import '../../node_modules/react-vis/dist/style.css'
+import 'react-vis/dist/style.css'
 
 const MainContainer = styled.div`
   display: flex;

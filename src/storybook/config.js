@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import { MemoryRouter } from 'react-router'
 import centered from '@storybook/addon-centered'
 
-import '../../node_modules/react-vis/dist/style.css'
+import 'react-vis/dist/style.css'
 
 import theme from '../config/theme'
 
@@ -26,6 +26,7 @@ function loadStories() {
   require('../components/panel/story.js')
   require('../components/texts/story.js')
   require('../components/graphTest/story.js')
+  require('../components/list/story.js')
   // You can require as many stories as you need.
 }
 
