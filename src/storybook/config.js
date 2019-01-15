@@ -26,7 +26,6 @@ function loadStories() {
   require('../components/panel/story.js')
   require('../components/texts/story.js')
   require('../components/graphTest/story.js')
-  require('../components/list/story.js')
   // You can require as many stories as you need.
 }
 
