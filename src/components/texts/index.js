@@ -7,21 +7,27 @@ const Title = styled.h2`
   font-weight: normal;
   font-size: 40px;
   color: ${props =>
-    props.color ? props.theme.color[props.color] : props.theme.color.black};
+    props.color
+      ? props.theme.color[props.color]
+      : props.theme.color.primaryColor};
   text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `
 const SubTitle = styled.h4`
   font-family: Gotham;
   font-weight: normal;
   color: ${props =>
-    props.color ? props.theme.color[props.color] : props.theme.color.green};
+    props.color
+      ? props.theme.color[props.color]
+      : props.theme.color.primaryColor};
   text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `
 const CommonText = styled.span`
   font-family: Gotham;
   font-weight: normal;
   color: ${props =>
-    props.color ? props.theme.color[props.color] : props.theme.color.black};
+    props.color
+      ? props.theme.color[props.color]
+      : props.theme.color.primaryColor};
   text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `
 

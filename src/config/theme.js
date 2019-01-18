@@ -2,9 +2,11 @@ export default {
   color: {
     black: '#222',
     white: '#fff',
-    green: '#a0cd48',
-    greenLight: '#c0dd87',
-    greenLighter: '#e0eec3',
+    loginBackground: '#f2debd',
+    bookSeparator: '#580303',
+    primaryColor: '#7f0909',
+    secondaryColor: '#940B0B',
+    tertiaryColor: '#CB4B4B',
     gray: '#979797'
   }
 }

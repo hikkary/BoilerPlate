@@ -17,6 +17,7 @@ const LoginSubtitle = styled(SubTitle)`
 `
 const StyledLink = styled(Link)`
   text-decoration: none;
+  color: ${props => props.theme.color.primaryColor};
 `
 
 export default class LoginForm extends React.Component {

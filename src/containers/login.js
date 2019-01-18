@@ -6,8 +6,7 @@ import styled from 'styled-components'
 import LoginForm from '../components/loginForm'
 
 import allTheActions from '../actions'
-
-import 'react-vis/dist/style.css'
+import HarryPotterLogo from '../static/images/harryPotterLogo.png'
 
 const MainContainer = styled.div`
   display: flex;
@@ -17,7 +16,7 @@ const MainContainer = styled.div`
 
 const LeftDiv = styled.div`
   align-items: center;
-  background-color: ${props => props.theme.color.white};
+  background-color: ${props => props.theme.color.loginBackground};
   display: flex;
   flex: 1;
   height: 100vh;
@@ -26,19 +25,22 @@ const LeftDiv = styled.div`
 `
 const RightDiv = styled.div`
   align-items: center;
-  background-color: ${props => props.theme.color.white};
+  background-color: ${props => props.theme.color.loginBackground};
   display: flex;
   flex: 1;
-  height: 100vh;
   justify-content: center;
   width: 100%;
 `
 const BookSeparator = styled.div`
   height: 100vh;
-  background-color: ${props => props.theme.color.black};
+  background-color: ${props => props.theme.color.bookSeparator};
   opacity: 0.2;
   box-shadow: 1px 2px 31px 7px;
   width: 1px;
+`
+const Logo = styled.img`
+  width: 250px;
+  height: 100px;
 `
 
 class App extends Component {
@@ -47,7 +49,7 @@ class App extends Component {
       <React.Fragment>
         <MainContainer>
           <LeftDiv>
-            <p>LOGO</p>
+            <Logo src={HarryPotterLogo} />
           </LeftDiv>
           <BookSeparator />
           <RightDiv>
