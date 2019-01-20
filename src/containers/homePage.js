@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import Panel from '../components/panel'
@@ -18,14 +19,16 @@ class HomePage extends Component {
     return (
       <React.Fragment>
         <PanelContainer>
-          <Panel>
-            <SeveralLineTitle color="white">ÉCOLES</SeveralLineTitle>
+          <Link to="/house/gryffindor">
+            <Panel>
+              <SeveralLineTitle color="white">MAISONS</SeveralLineTitle>
+            </Panel>
+          </Link>
+          <Panel color="secondaryColor">
+            <SeveralLineTitle color="white">SCORES</SeveralLineTitle>
           </Panel>
-          <Panel color="greenLight">
-            <SeveralLineTitle color="white">ASSOCIATION</SeveralLineTitle>
-          </Panel>
-          <Panel color="greenLighter">
-            <SeveralLineTitle color="white">MOSQUÉES</SeveralLineTitle>
+          <Panel color="tertiaryColor">
+            <SeveralLineTitle color="white">OPTIONS</SeveralLineTitle>
           </Panel>
           <Panel color="white" />
         </PanelContainer>
