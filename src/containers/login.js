@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import styled from 'styled-components'
 
 import LoginForm from '../components/loginForm'
 
-import allTheActions from '../actions'
 import HarryPotterLogo from '../static/images/harryPotterLogo.png'
 
 const MainContainer = styled.div`
@@ -43,7 +40,7 @@ const Logo = styled.img`
   height: 100px;
 `
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <React.Fragment>
@@ -54,26 +51,9 @@ class App extends Component {
           <BookSeparator />
           <RightDiv>
             <LoginForm />
-            {/* creer un component input pour contenir tout sa*/}
           </RightDiv>
         </MainContainer>
       </React.Fragment>
     )
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    search: state.search.search
-  }
-}
-const mapDispatchToProps = dispatch => ({
-  actions: {
-    search: bindActionCreators(allTheActions.search, dispatch)
-  }
-})
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
