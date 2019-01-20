@@ -4,24 +4,25 @@ import './index.css'
 import registerServiceWorker from './registerServiceWorker'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { Route, Switch } from 'react-router'
-import { ConnectedRouter } from 'connected-react-router'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import Login from './containers/login'
 import HomePage from './containers/homePage'
+import HouseCharacters from './containers/houseCharacters'
 
-import { history, store } from './config/store'
+import { store } from './config/store'
 import theme from './config/theme'
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <Provider store={store}>
-      <ConnectedRouter history={history}>
+      <Router>
         <Switch>
-          <Route exact path="/" render={() => <Login />} />
-          <Route exact path="/home" render={() => <HomePage />} />
+          <Route exact path="/" component={Login} />
+          <Route path="/home" component={HomePage} />
+          <Route path="/house/:houseName" component={HouseCharacters} />
         </Switch>
-      </ConnectedRouter>
+      </Router>
     </Provider>
   </ThemeProvider>,
   document.getElementById('root')
