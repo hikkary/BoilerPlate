@@ -6,7 +6,7 @@ import { Title } from '../texts'
 
 storiesOf('Panel', module)
   .add('Empty Panel', () => <Panel />)
-  .add('Empty Panel Custom Color', () => <Panel color="greenLight" />)
+  .add('Empty Panel Custom Color', () => <Panel color="primaryColor" />)
   .add('Panel With Title', () => (
     <Panel>
       <Title uppercase color="white">
@@ -15,9 +15,9 @@ storiesOf('Panel', module)
     </Panel>
   ))
   .add('Panel With Title & Custom Color', () => (
-    <Panel color="greenLighter">
+    <Panel color="tertiaryColor">
       <Title uppercase color="white">
-        Mosquée
+        Options
       </Title>
     </Panel>
   ))
