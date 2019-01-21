@@ -1,14 +1,52 @@
 import React from 'react'
 import styled from 'styled-components'
+import { withRouter } from 'react-router'
+
+import StyledLink from '../styledLink'
+import { TextMenu } from '../texts'
 
 const HeaderContainer = styled.div`
+  align-items: center;
+  background-color: ${props => props.theme.color.tertiaryColor};
   display: flex;
   height: 50px;
-  background-color: red;
+`
+const LeftMenuContainer = styled.div`
+  display: flex;
+  flex: 7;
+  justify-content: center;
+`
+const RightMenuContainer = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
 `
 
-export default class Header extends React.Component {
+class Header extends React.Component {
+  disconnect = () => {
+    const { history } = this.props
+    history.push('/')
+  }
+
   render() {
-    return <HeaderContainer />
+    return (
+      <HeaderContainer>
+        <LeftMenuContainer>
+          <StyledLink to="/home">
+            <TextMenu>Acceuil</TextMenu>
+          </StyledLink>
+          <StyledLink to="/house/gryffindor">
+            <TextMenu>Maisons</TextMenu>
+          </StyledLink>
+        </LeftMenuContainer>
+        <RightMenuContainer>
+          <TextMenu onClick={this.disconnect}>Deconnexion</TextMenu>
+        </RightMenuContainer>
+      </HeaderContainer>
+    )
   }
 }
+
+const ConnectedHeader = withRouter(Header)
+
+export default ConnectedHeader
