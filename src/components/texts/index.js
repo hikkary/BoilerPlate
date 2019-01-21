@@ -31,4 +31,17 @@ const CommonText = styled.span`
   text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `
 
-export { CommonText, Title, SubTitle }
+const TextMenu = styled.span`
+  cursor: pointer;
+  font-family: Gotham;
+  font-size: 25px;
+  font-weight: normal;
+  color: ${props =>
+    props.color
+      ? props.theme.color[props.color]
+      : props.theme.color.primaryColor};
+  margin: 5px;
+  text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
+`
+
+export { CommonText, TextMenu, Title, SubTitle }

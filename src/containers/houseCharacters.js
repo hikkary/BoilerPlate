@@ -1,10 +1,10 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { CommonText } from '../components/texts'
+import StyledLink from '../components/styledLink'
+import { CommonText, TextMenu } from '../components/texts'
 import Layout from './layout'
 
 const HouseList = styled.div`
@@ -13,11 +13,6 @@ const HouseList = styled.div`
   display: flex;
   height: 150px;
   justify-content: center;
-`
-const StyledLink = styled(Link)`
-  font-size: 30px;
-  margin: 5px;
-  text-decoration: none;
 `
 
 const StudentList = styled.div`
@@ -65,19 +60,32 @@ class HomePage extends Component {
   }
 
   render() {
+    const { match } = this.props
     return (
       <Layout>
         <HouseList>
-          <StyledLink to="/house/gryffindor">Gryffondor</StyledLink>
-          <StyledLink to="/house/slytherin">Serpentard</StyledLink>
-          <StyledLink to="/house/ravenclaw">Serdaigle</StyledLink>
-          <StyledLink to="/house/hufflepuff">PoufSouffle</StyledLink>
+          <StyledLink to="/house/gryffindor">
+            <TextMenu>Gryffondor</TextMenu>
+          </StyledLink>
+          <StyledLink to="/house/slytherin">
+            <TextMenu>Serpentard</TextMenu>
+          </StyledLink>
+          <StyledLink to="/house/ravenclaw">
+            <TextMenu>Serdaigle</TextMenu>
+          </StyledLink>
+          <StyledLink to="/house/hufflepuff">
+            <TextMenu>PoufSouffle</TextMenu>
+          </StyledLink>
         </HouseList>
-        <StudentList>
-          {this.state.characters.map((character, index) => (
-            <CommonText key={index}>{character.name}</CommonText>
-          ))}
-        </StudentList>
+        {match.params.houseName ? (
+          <StudentList>
+            {this.state.characters.map((character, index) => (
+              <CommonText key={index}>{character.name}</CommonText>
+            ))}
+          </StudentList>
+        ) : (
+          <CommonText>Veuillez Selectionnez une Maison</CommonText>
+        )}
       </Layout>
     )
   }
