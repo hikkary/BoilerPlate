@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
+import StyledLink from '../styledLink'
 import { SubTitle, Title } from '../texts'
 import Input from '../input'
 
@@ -14,10 +14,6 @@ const Form = styled.form`
 const LoginSubtitle = styled(SubTitle)`
   padding: 5px;
   cursor: pointer;
-`
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: ${props => props.theme.color.primaryColor};
 `
 
 export default class LoginForm extends React.Component {
