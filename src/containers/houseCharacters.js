@@ -68,9 +68,10 @@ class HomePage extends Component {
     return (
       <Layout>
         <HouseList>
-          <StyledLink to="/house/slytherin">slytherin</StyledLink>
-          <StyledLink to="/house/gryffindor">gryffindor</StyledLink>
-          <StyledLink to="/house/ravenclaw">ravenclaw</StyledLink>
+          <StyledLink to="/house/gryffindor">Gryffondor</StyledLink>
+          <StyledLink to="/house/slytherin">Serpentard</StyledLink>
+          <StyledLink to="/house/ravenclaw">Serdaigle</StyledLink>
+          <StyledLink to="/house/hufflepuff">PoufSouffle</StyledLink>
         </HouseList>
         <StudentList>
           {this.state.characters.map((character, index) => (
