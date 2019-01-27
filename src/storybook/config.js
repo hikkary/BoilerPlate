@@ -6,10 +6,10 @@ import centered from '@storybook/addon-centered'
 
 import 'react-vis/dist/style.css'
 
-import theme from '../config/theme'
+import { themeLight } from '../config/themes'
 
 const ThemeDecorator = story => (
-  <ThemeProvider theme={theme}>{story()}</ThemeProvider>
+  <ThemeProvider theme={themeLight}>{story()}</ThemeProvider>
 )
 
 const MemoryDecorator = story => (
@@ -21,11 +21,13 @@ addDecorator(ThemeDecorator)
 addDecorator(centered)
 
 function loadStories() {
+  require('../components/counter/story.js')
+  require('../components/graphTest/story.js')
   require('../components/input/story.js')
   require('../components/loginForm/story.js')
   require('../components/panel/story.js')
+  require('../components/dragAndDrop/story.js')
   require('../components/texts/story.js')
-  require('../components/graphTest/story.js')
   // You can require as many stories as you need.
 }
 
