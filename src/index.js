@@ -6,15 +6,28 @@ import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
 import { store } from './config/store'
-import theme from './config/theme'
 import Routes from './config/routes'
 
-ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <Provider store={store}>
-      <Routes />
-    </Provider>
-  </ThemeProvider>,
-  document.getElementById('root')
-)
+class App extends React.Component {
+  state = {
+    connectedTheme: store.getState()
+  }
+
+  componentDidMount() {
+    store.subscribe(() => this.setState({ connectedTheme: store.getState() }))
+  }
+
+  render() {
+    const { connectedTheme } = this.state
+    return (
+      <ThemeProvider theme={connectedTheme.themes.currentTheme}>
+        <Provider store={store}>
+          <Routes />
+        </Provider>
+      </ThemeProvider>
+    )
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
 registerServiceWorker()
