@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { withRouter } from 'react-router'
+import Proptypes from 'prop-types'
 
 import StyledLink from '../styledLink'
 import { TextMenu } from '../texts'
@@ -23,6 +24,9 @@ const RightMenuContainer = styled.div`
 `
 
 class Header extends React.Component {
+  static propTypes = {
+    history: Proptypes.object
+  }
   disconnect = () => {
     const { history } = this.props
     history.push('/')
@@ -37,6 +41,12 @@ class Header extends React.Component {
           </StyledLink>
           <StyledLink to="/house/gryffindor">
             <TextMenu>Maisons</TextMenu>
+          </StyledLink>
+          <StyledLink to="/ranking">
+            <TextMenu>Classement</TextMenu>
+          </StyledLink>
+          <StyledLink to="/options">
+            <TextMenu>Options</TextMenu>
           </StyledLink>
         </LeftMenuContainer>
         <RightMenuContainer>
