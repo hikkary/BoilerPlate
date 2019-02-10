@@ -7,6 +7,8 @@
     "babel-core": "^6.26.3",
     "connected-react-router": "^4.3.0",
     "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "enzyme-to-json": "^3.3.5",
     "jest-styled-components": "^6.3.1",
     "react": "^16.4.1",
     "react-beautiful-dnd": "^10.0.3",
@@ -39,5 +41,13 @@
     "prettier-eslint-cli": "^4.7.1",
     "react-test-renderer": "^16.8.1",
     "redux-logger": "^3.0.6"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "app/**/*js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
