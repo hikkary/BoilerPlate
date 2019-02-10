@@ -6,6 +6,7 @@ import styled from 'styled-components'
 
 import { Title } from '../components/texts'
 import Counter from '../components/counter'
+import CounterExercice from '../components/exerciceOne'
 import DragAndDrop from '../components/dragAndDrop'
 import Layout from './layout'
 
@@ -42,6 +43,14 @@ class HomePage extends Component {
       <Layout>
         <CountersAndTitleContainer>
           <Title>Houses Scores</Title>
+          <CountersContainer>
+            <CounterExercice
+              counterNumber={counter.gryffindor}
+              counterTitle="test Gryffondor"
+              increment={() => actions.counter.incrementCounter('gryffindor')}
+              decrement={() => actions.counter.decrementCounter('gryffindor')}
+            />
+          </CountersContainer>
           <CountersContainer>
             <Counter
               counterNumber={counter.gryffindor}
