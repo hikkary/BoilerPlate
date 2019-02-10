@@ -14,6 +14,6 @@ export default (state = initialState, action) => {
       }
 
     default:
-      return { ...state, currentTheme: themeLight }
+      return state
   }
 }
