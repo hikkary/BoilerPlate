@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { CommonText } from '../texts'
-
 import './index.css'
 
 export default class Counter extends React.Component {
