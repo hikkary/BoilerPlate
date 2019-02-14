@@ -80,8 +80,8 @@ class HomePage extends Component {
           <ExerciceFive
             counterNumber={counter.slytherin}
             counterTitle="test 5"
-            increment={() => actions.counter.incrementCounter('gryffindor')}
-            decrement={() => actions.counter.decrementCounter('gryffindor')}
+            increment={() => actions.counter.incrementCounter('slytherin')}
+            decrement={() => actions.counter.decrementCounter('slytherin')}
           />
         </CountersAndTitleContainer>
         <CountersAndTitleContainer>

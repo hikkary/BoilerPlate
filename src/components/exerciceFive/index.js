@@ -23,37 +23,46 @@ export default class Counter extends React.Component {
   }
 
   render() {
-    const {
-      counterNumber,
-      counterTitle,
-      decrement,
-      disabled,
-      increment
-    } = this.props
+    const { counterNumber, counterTitle, decrement, increment } = this.props
 
-    if (disabled) {
-      return null
-    }
+    console.log(this.state)
 
     return (
       <div className="counterContainer">
-        <div>
-          <span className="commonText">{counterTitle}</span>
-        </div>
-        <div className="counterNumberContainer">
-          <span className="commonText">{counterNumber}</span>
-        </div>
-        <div>
-          <button className="styledButton decrementButton" onClick={decrement}>
-            <span className="commonText">-</span>
-          </button>
-          <button className="styledButton incrementButton" onClick={increment}>
-            <span className="commonText">+</span>
-          </button>
-          <button className="loadButton" onClick={this.loading}>
-            <span className="commonText">load</span>
-          </button>
-        </div>
+        {this.state.isLoading ? (
+          <div>
+            <p className="commonText">loading</p>
+            <button className="loadButton" onClick={this.loading}>
+              <span>stop Loading</span>
+            </button>
+          </div>
+        ) : (
+          <React.Fragment>
+            <div>
+              <span className="commonText">{counterTitle}</span>
+            </div>
+            <div className="counterNumberContainer">
+              <span className="commonText">{counterNumber}</span>
+            </div>
+            <div>
+              <button
+                className="styledButton decrementButton"
+                onClick={decrement}
+              >
+                <span className="commonText">-</span>
+              </button>
+              <button
+                className="styledButton incrementButton"
+                onClick={increment}
+              >
+                <span className="commonText">+</span>
+              </button>
+              <button className="loadButton" onClick={this.loading}>
+                <span>load</span>
+              </button>
+            </div>
+          </React.Fragment>
+        )}
       </div>
     )
   }
