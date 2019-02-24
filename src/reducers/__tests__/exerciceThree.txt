@@ -1,0 +1,4 @@
+le but de cet exercice est de completer des test basique sur le reducer themes
+
+-- s'assurer que les deux theme soit testé (s'inspirer de l'exemple en place)
+-- creer un snapshot lors des sets des themeDark et themeLight ( s'inspirer de l'exemple en place)

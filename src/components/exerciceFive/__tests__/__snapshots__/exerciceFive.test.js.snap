@@ -20,18 +20,9 @@ exports[`should match the snapshot (good Practice) 1`] = `
       0
     </span>
   </div>
-  <div
-    className="counterNumberContainer"
-  >
-    <span
-      className="commonText"
-    >
-      0
-    </span>
-  </div>
   <div>
     <button
-      className="styledButton"
+      className="styledButton decrementButton"
     >
       <span
         className="commonText"
@@ -40,12 +31,20 @@ exports[`should match the snapshot (good Practice) 1`] = `
       </span>
     </button>
     <button
-      className="styledButton"
+      className="styledButton incrementButton"
     >
       <span
         className="commonText"
       >
         +
+      </span>
+    </button>
+    <button
+      className="loadButton"
+      onClick={[Function]}
+    >
+      <span>
+        load
       </span>
     </button>
   </div>

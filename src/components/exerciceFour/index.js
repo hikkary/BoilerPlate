@@ -12,6 +12,20 @@ export default class Counter extends React.Component {
     increment: PropTypes.func
   }
 
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKey, false)
+  }
+
+  handleKey = e => {
+    console.log(e)
+    if (e.key === 'ArrowDown') {
+      this.props.decrement()
+    }
+    if (e.key === 'ArrowUp') {
+      this.props.increment()
+    }
+  }
+
   render() {
     const {
       counterNumber,
@@ -34,10 +48,10 @@ export default class Counter extends React.Component {
           <span className="commonText">{counterNumber}</span>
         </div>
         <div>
-          <button className="styledButton" onClick={decrement}>
+          <button className="styledButton decrementButton" onClick={decrement}>
             <span className="commonText">-</span>
           </button>
-          <button className="styledButton" onClick={increment}>
+          <button className="styledButton incrementButton" onClick={increment}>
             <span className="commonText">+</span>
           </button>
         </div>

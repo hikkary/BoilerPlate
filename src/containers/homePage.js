@@ -6,11 +6,17 @@ import styled from 'styled-components'
 
 import { Title } from '../components/texts'
 import Counter from '../components/counter'
-import CounterExercice from '../components/exerciceOne'
+import ExerciceOne from '../components/exerciceOne'
+import ExerciceTwo from '../components/exerciceTwo'
+import ExerciceFour from '../components/exerciceFour'
+import ExerciceFive from '../components/exerciceFive'
+import ExerciceSix from '../components/exerciceSix'
+import ExerciceSeven from '../components/exerciceSeven'
 import DragAndDrop from '../components/dragAndDrop'
 import Layout from './layout'
 
 import allTheActions from '../actions'
+import { getRandomUser } from '../utils/getRandomUsers'
 
 const CountersAndTitleContainer = styled.div`
   align-items: center;
@@ -37,20 +43,57 @@ class HomePage extends Component {
     actions: PropTypes.object,
     counter: PropTypes.object
   }
+
+  componentDidMount() {
+    getRandomUser().then(res => console.log(res))
+  }
+
   render() {
     const { actions, counter } = this.props
     return (
       <Layout>
         <CountersAndTitleContainer>
-          <Title>Houses Scores</Title>
+          <Title>ExerciceOne</Title>
           <CountersContainer>
-            <CounterExercice
+            <ExerciceOne
               counterNumber={counter.gryffindor}
               counterTitle="test Gryffondor"
               increment={() => actions.counter.incrementCounter('gryffindor')}
               decrement={() => actions.counter.decrementCounter('gryffindor')}
             />
           </CountersContainer>
+        </CountersAndTitleContainer>
+        <CountersAndTitleContainer>
+          <Title>ExerciceTwo</Title>
+          <ExerciceTwo numberElements={3} />
+        </CountersAndTitleContainer>
+        <CountersAndTitleContainer>
+          <Title>ExerciceFour</Title>
+          <ExerciceFour
+            counterNumber={counter.gryffindor}
+            counterTitle="test 4"
+            increment={() => actions.counter.incrementCounter('gryffindor')}
+            decrement={() => actions.counter.decrementCounter('gryffindor')}
+          />
+        </CountersAndTitleContainer>
+        <CountersAndTitleContainer>
+          <Title>ExerciceFive</Title>
+          <ExerciceFive
+            counterNumber={counter.slytherin}
+            counterTitle="test 5"
+            increment={() => actions.counter.incrementCounter('slytherin')}
+            decrement={() => actions.counter.decrementCounter('slytherin')}
+          />
+        </CountersAndTitleContainer>
+        <CountersAndTitleContainer>
+          <Title>ExerciceSix</Title>
+          <ExerciceSix data="Allo allo" />
+        </CountersAndTitleContainer>
+        <CountersAndTitleContainer>
+          <Title>ExerciceSeven</Title>
+          <ExerciceSeven />
+        </CountersAndTitleContainer>
+        <CountersAndTitleContainer>
           <CountersContainer>
             <Counter
               counterNumber={counter.gryffindor}
