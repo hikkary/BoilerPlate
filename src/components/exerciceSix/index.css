@@ -1,6 +1,6 @@
 .LocalStorageContainer {
   align-items: center;
-  background-color: black;
+  background-color: red;
   display: flex;
   flex-direction: column;
   padding: 20px;

@@ -11,6 +11,7 @@ import ExerciceTwo from '../components/exerciceTwo'
 import ExerciceFour from '../components/exerciceFour'
 import ExerciceFive from '../components/exerciceFive'
 import ExerciceSix from '../components/exerciceSix'
+import ExerciceSeven from '../components/exerciceSeven'
 import DragAndDrop from '../components/dragAndDrop'
 import Layout from './layout'
 
@@ -87,6 +88,10 @@ class HomePage extends Component {
         <CountersAndTitleContainer>
           <Title>ExerciceSix</Title>
           <ExerciceSix data="Allo allo" />
+        </CountersAndTitleContainer>
+        <CountersAndTitleContainer>
+          <Title>ExerciceSeven</Title>
+          <ExerciceSeven />
         </CountersAndTitleContainer>
         <CountersAndTitleContainer>
           <CountersContainer>
