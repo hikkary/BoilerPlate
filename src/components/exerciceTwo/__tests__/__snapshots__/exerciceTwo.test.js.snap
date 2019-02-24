@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render with no props 1`] = `
+<Fragment>
+  <h1>
+    Allo
+  </h1>
+  <ul />
+</Fragment>
+`;
+
+exports[`should render with props 1`] = `
+<Fragment>
+  <h1>
+    Allo
+  </h1>
+  <ul>
+    <li
+      key="0"
+    >
+      test
+    </li>
+    <li
+      key="1"
+    >
+      test
+    </li>
+    <li
+      key="2"
+    >
+      test
+    </li>
+    <li
+      key="3"
+    >
+      test
+    </li>
+  </ul>
+</Fragment>
+`;

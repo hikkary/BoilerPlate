@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render properly 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "color": Object {
+        "backgroundColor": "#fff",
+        "black": "#222",
+        "bookSeparator": "#580303",
+        "gray": "#979797",
+        "gryffindorPrimary": "#7f0909",
+        "gryffindorSecondary": "#d3a625",
+        "hufflepuffPrimary": "#ecb939",
+        "hufflepuffSecondary": "#372e29",
+        "loginBackground": "#f2debd",
+        "primaryColor": "#7f0909",
+        "ravenclawPrimary": "#0e1a40",
+        "ravenclawSecondary": "#946b2d",
+        "secondaryColor": "#940B0B",
+        "slytherinPrimary": "#1a472a",
+        "slytherinSecondary": "#aaaaaa",
+        "tertiaryColor": "#CB4B4B",
+        "white": "#fff",
+      },
+    }
+  }
+>
+  <MemoryRouter>
+    <HomePage
+      match={
+        Object {
+          "params": Object {
+            "houseName": "gryffindor",
+          },
+        }
+      }
+    />
+  </MemoryRouter>
+</ThemeProvider>
+`;

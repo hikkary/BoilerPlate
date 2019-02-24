@@ -35,3 +35,13 @@ it('sets initial state Snapshot', () => {
 })
 
 // TODO: Snapshot quand on set themeDark et themeLight
+
+it('sets themeDark Snapshot', () => {
+  expect(reducer({}, changeTheme(themeDark))).toMatchSnapshot()
+  // reducer prend en premier argument un state, en second argument une action
+})
+
+it('sets themeLight Snapshot', () => {
+  expect(reducer({}, changeTheme(themeLight))).toMatchSnapshot()
+  // reducer prend en premier argument un state, en second argument une action
+})
