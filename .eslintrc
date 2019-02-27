@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "plugins": ["react"],
+  "plugins": ["react", "react-hooks"],
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "env": { "browser": true, "node": true, "jest": true },
   "rules": {
@@ -10,6 +10,7 @@
     "quotes": [2, "single", { "avoidEscape": true }],
     "react/no-redundant-should-component-update": 2,
     "react/sort-comp": 2,
-    "semi": [2, "never"]
+    "semi": [2, "never"],
+    "react-hooks/rules-of-hooks": "error"
   }
 }
