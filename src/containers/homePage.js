@@ -9,6 +9,8 @@ import Counter from '../components/counter'
 import CounterExercice from '../components/exerciceOne'
 import DragAndDrop from '../components/dragAndDrop'
 import Layout from './layout'
+import CounterHook from '../components/counterHook'
+import NameHook from '../components/nameHook'
 
 import allTheActions from '../actions'
 
@@ -37,10 +39,13 @@ class HomePage extends Component {
     actions: PropTypes.object,
     counter: PropTypes.object
   }
+
   render() {
     const { actions, counter } = this.props
     return (
       <Layout>
+        <CounterHook />
+        <NameHook />
         <CountersAndTitleContainer>
           <Title>Houses Scores</Title>
           <CountersContainer>
@@ -95,11 +100,9 @@ class HomePage extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    counter: state.counter
-  }
-}
+const mapStateToProps = state => ({
+  counter: state.counter
+})
 
 const mapDispatchToProps = dispatch => ({
   actions: {
