@@ -22,7 +22,7 @@ const StudentList = styled.div`
   justify-content: center;
 `
 
-class HomePage extends Component {
+class HouseCharacters extends Component {
   static propTypes = {
     match: PropTypes.object
   }
@@ -91,4 +91,4 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage
+export default HouseCharacters
