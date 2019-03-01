@@ -1,0 +1,18 @@
+{
+  "translation": {
+    "menu": {
+      "home": "Home",
+      "houses": "Houses",
+      "ranking": "Ranking",
+      "options": "Options",
+      "disconnect": "Log Out"
+    },
+    "houses": {
+      "gryffindor": "Gryffindor",
+      "slytherin": "Slytherin",
+      "ravenclaw": "Ravenclaw",
+      "hufflepuff": "Hufflepuff"
+    },
+    "numberHouse": "there is {{number}} students in the {{house}} house"
+  }
+}
