@@ -9,10 +9,16 @@ import { themeLight, themeDark } from '../config/themes'
 
 import { Title } from '../components/texts'
 import { Button } from 'glamorous'
+import i18next from 'i18next'
 
 class Ranking extends Component {
   static propTypes = {
     actions: PropTypes.object
+  }
+
+  changeLanguage = language => {
+    i18next.changeLanguage(language)
+    localStorage.setItem('language', language)
   }
 
   render() {
@@ -26,6 +32,9 @@ class Ranking extends Component {
         <Button onClick={() => actions.themes.changeTheme(themeLight)}>
           Mode Jour
         </Button>
+        <Title>Choisissez un Language</Title>
+        <Button onClick={() => this.changeLanguage('fr')}>Français</Button>
+        <Button onClick={() => this.changeLanguage('en')}>Anglais</Button>
       </Layout>
     )
   }

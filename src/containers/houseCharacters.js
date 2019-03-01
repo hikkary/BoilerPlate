@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { withTranslation } from 'react-i18next'
 
 import StyledLink from '../components/styledLink'
 import { CommonText, TextMenu } from '../components/texts'
@@ -60,21 +61,21 @@ class HouseCharacters extends Component {
   }
 
   render() {
-    const { match } = this.props
+    const { match, t } = this.props
     return (
       <Layout>
         <HouseList>
           <StyledLink to="/house/gryffindor">
-            <TextMenu>Gryffondor</TextMenu>
+            <TextMenu>{t('houses.gryffindor')}</TextMenu>
           </StyledLink>
           <StyledLink to="/house/slytherin">
-            <TextMenu>Serpentard</TextMenu>
+            <TextMenu>{t('houses.slytherin')}</TextMenu>
           </StyledLink>
           <StyledLink to="/house/ravenclaw">
-            <TextMenu>Serdaigle</TextMenu>
+            <TextMenu>{t('houses.ravenclaw')}</TextMenu>
           </StyledLink>
           <StyledLink to="/house/hufflepuff">
-            <TextMenu>PoufSouffle</TextMenu>
+            <TextMenu>{t('houses.hufflepuff')}</TextMenu>
           </StyledLink>
         </HouseList>
         {match.params.houseName ? (
@@ -82,6 +83,12 @@ class HouseCharacters extends Component {
             {this.state.characters.map((character, index) => (
               <CommonText key={index}>{character.name}</CommonText>
             ))}
+            <p>
+              {t('numberHouse', {
+                number: this.state.characters.length,
+                house: match.params.houseName
+              })}
+            </p>
           </StudentList>
         ) : (
           <CommonText>Veuillez Selectionnez une Maison</CommonText>
@@ -91,4 +98,4 @@ class HouseCharacters extends Component {
   }
 }
 
-export default HouseCharacters
+export default withTranslation()(HouseCharacters)

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { withTranslation } from 'react-i18next'
 import { withRouter } from 'react-router'
 import Proptypes from 'prop-types'
 
@@ -33,24 +34,25 @@ class Header extends React.Component {
   }
 
   render() {
+    const { t } = this.props
     return (
       <HeaderContainer>
         <LeftMenuContainer>
           <StyledLink to="/home">
-            <TextMenu>Acceuil</TextMenu>
+            <TextMenu>{t('menu.home')}</TextMenu>
           </StyledLink>
           <StyledLink to="/house/gryffindor">
-            <TextMenu>Maisons</TextMenu>
+            <TextMenu>{t('menu.houses')}</TextMenu>
           </StyledLink>
           <StyledLink to="/ranking">
-            <TextMenu>Classement</TextMenu>
+            <TextMenu>{t('menu.ranking')}</TextMenu>
           </StyledLink>
           <StyledLink to="/options">
-            <TextMenu>Options</TextMenu>
+            <TextMenu>{t('menu.options')}</TextMenu>
           </StyledLink>
         </LeftMenuContainer>
         <RightMenuContainer>
-          <TextMenu onClick={this.disconnect}>Deconnexion</TextMenu>
+          <TextMenu onClick={this.disconnect}>{t('menu.disconnect')}</TextMenu>
         </RightMenuContainer>
       </HeaderContainer>
     )
@@ -59,4 +61,4 @@ class Header extends React.Component {
 
 const ConnectedHeader = withRouter(Header)
 
-export default ConnectedHeader
+export default withTranslation()(ConnectedHeader)
