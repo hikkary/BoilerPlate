@@ -13,6 +13,7 @@
       "ravenclaw": "Ravenclaw",
       "hufflepuff": "Hufflepuff"
     },
-    "numberHouse": "there is {{number}} students in the {{house}} house"
+    "numberHouse": "there is {{count}} student in the {{house}} house",
+    "numberHouse_plural": "there is {{count}} students in the {{house}} house"
   }
 }

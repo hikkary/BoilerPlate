@@ -85,7 +85,7 @@ class HouseCharacters extends Component {
             ))}
             <p>
               {t('numberHouse', {
-                number: this.state.characters.length,
+                count: this.state.characters.length,
                 house: match.params.houseName
               })}
             </p>

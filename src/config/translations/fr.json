@@ -13,6 +13,7 @@
       "ravenclaw": "Serdaigle",
       "hufflepuff": "Poufsouffle"
     },
-    "numberHouse": "il y a {{number}} eleves dans la maison {{house}}"
+    "numberHouse": "il y a {{count}} eleve dans la maison {{house}}",
+    "numberHouse_plural": "il y a {{count}} eleves dans la maison {{house}}"
   }
 }
