@@ -47,6 +47,9 @@ class Header extends React.Component {
           <StyledLink to="/ranking">
             <TextMenu>{t('menu.ranking')}</TextMenu>
           </StyledLink>
+          <StyledLink to="/spells">
+            <TextMenu>{t('menu.spells')}</TextMenu>
+          </StyledLink>
           <StyledLink to="/options">
             <TextMenu>{t('menu.options')}</TextMenu>
           </StyledLink>
