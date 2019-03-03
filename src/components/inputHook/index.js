@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
 const NameHook = () => {
-  const [info, setInfo] = useState({ name: 'abdou', surname: 'kerkeb' })
+  const [info, setInfo] = useState({ name: '', surname: '' })
 
-  const handelChangeinfo = e => {
+  const handleChangeinfo = e => {
     setInfo({
       ...info,
       [e.target.name]: e.target.value
@@ -12,8 +12,8 @@ const NameHook = () => {
 
   return (
     <div>
-      <input value={info.name} onChange={handelChangeinfo} name="name" />
-      <input value={info.surname} onChange={handelChangeinfo} name="surname" />
+      <input value={info.name} onChange={handleChangeinfo} name="name" />
+      <input value={info.surname} onChange={handleChangeinfo} name="surname" />
     </div>
   )
 }
